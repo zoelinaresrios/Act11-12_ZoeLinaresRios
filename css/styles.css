@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas-wrap {
+    position: absolute;
+    inset: 0;
+    line-height: 0;
+}
+
+.canvas-wrap canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.controls {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.ctrl-play {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s, transform 0.2s;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.ctrl-play:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: scale(1.06);
+}
+
+.ctrl-play.playing {
+    background: rgba(236, 72, 153, 0.35);
+    box-shadow: 0 4px 32px rgba(236, 72, 153, 0.3);
+}
+
+.ctrl-play.playing:hover {
+    background: rgba(236, 72, 153, 0.5);
+}
+
+.volume {
+    position: fixed;
+    right: 32px;
+    bottom: 56px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vol-label {
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.vol-track {
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: height 0.12s;
+}
+
+.vol-track:hover {
+    height: 6px;
+}
+
+.vol-fill {
+    height: 100%;
+    background: rgba(236, 72, 153, 0.7);
+    border-radius: 4px;
+    width: 80%;
+    pointer-events: none;
+    transition: background 0.2s;
+}
+
+.vol-thumb {
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    margin-top: -7px;
+    margin-left: -7px;
+    opacity: 0;
+    transition: opacity 0.12s;
+    pointer-events: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.vol-track:hover .vol-thumb {
+    opacity: 1;
+}
+
+.info {
+    position: fixed;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.5px;
+    text-align: center;
+    transition: opacity 0.4s;
+    pointer-events: none;
+    font-weight: 300;
+}
+
+@media (max-width: 640px) {
+    .volume {
+        right: 20px;
+        bottom: 40px;
+    }
+
+    .vol-track {
+        width: 60px;
+    }
+
+    .controls {
+        bottom: 30px;
+    }
+
+    .ctrl-play {
+        width: 52px;
+        height: 52px;
+    }
+
+    .info {
+        bottom: 90px;
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador Circular - T2</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="canvasWrap" class="canvas-wrap"></div>
+
+    <div class="controls">
+        <button id="btnPlay" class="ctrl-play" title="Play / Pausa">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <polygon points="6,4 20,12 6,20"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="volume">
+        <span class="vol-label">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+            </svg>
+        </span>
+        <div id="volBar" class="vol-track">
+            <div id="volFill" class="vol-fill"></div>
+            <div id="volThumb" class="vol-thumb"></div>
+        </div>
+    </div>
+
+    <div class="info" id="statusInfo">Hacé clic en play para comenzar</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+    <script src="js/sketch.js"></script>
+</body>
+</html>
