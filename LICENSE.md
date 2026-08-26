@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Thiago Salaberry
+Copyright (c) 2026 
 
 Proyecto desarrollado en el marco de las materias:
 
